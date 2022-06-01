@@ -1,10 +1,6 @@
 { config, pkgs, lib, ... }:
 
-let
-  swayConf = import ./sway/sway.nix;
-  footConf = import ./foot/foot.nix;
-  waybarConf = import ./waybar/waybar.nix;
-in {
+{
   programs.home-manager.enable = true;
 
   xdg.userDirs = {
