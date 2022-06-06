@@ -1,0 +1,6 @@
+set shell zsh
+set icons
+set number
+set drawbox
+set incsearch
+# set previewer "bat"

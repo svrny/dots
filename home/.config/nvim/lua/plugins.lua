@@ -60,28 +60,10 @@ return require'packer'.startup({function(use)
   }
 
   use {
-    "akinsho/toggleterm.nvim",
-    tag = 'v2.*',
-    config = function()
-      require("toggleterm").setup()
-    end
-  }
-
-  use {
     'nvim-lualine/lualine.nvim',
     config = function()
       require'conf.lualine'
     end
-  }
-
-  use {
-    'nvim-telescope/telescope.nvim',
-    requires = {
-      'nvim-lua/plenary.nvim'
-    },
-    config = function()
-      require'conf.telescope'
-    end,
   }
 
   use {
@@ -109,13 +91,21 @@ return require'packer'.startup({function(use)
   use {
     'lukas-reineke/indent-blankline.nvim',
     config = function()
+      vim.cmd [[highlight IndentBlanklineIndent1 guifg=#303030 gui=nocombine]]
       require'conf.indent-blankline'
     end
   }
 
+  use {
+    'junegunn/fzf.vim',
+    requires = { 'junegunn/fzf' }
+  }
+
+  use 'elixir-editors/vim-elixir'
   use 'sbdchd/neoformat'
   use 'b3nj5m1n/kommentary'
   use 'tpope/vim-surround'
+
 end,
 config = {
   display = {

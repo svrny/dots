@@ -1,37 +1,30 @@
-{ config, pkgs, lib, ... }:
-
-{
+{ config, pkgs, lib, ... }: {
   programs.home-manager.enable = true;
 
-  xdg.userDirs = {
-    enable = true;
-    documents = "$HOME/docs/";
-    download = "$HOME/dl/";
-    videos = "$HOME/vids/";
-    music = "$HOME/music/";
-    pictures = "$HOME/pics/";
-    desktop = "$HOME/stuff/other/";
-    publicShare = "$HOME/stuff/other/";
-    templates = "$HOME/stuff/other/";
-  };
-
-  programs.fzf = {
-    enable = true;
-    enableZshIntegration = true;
-    defaultCommand = "fd -tf";
-    defaultOptions = [
-      "--color 'prompt:4,pointer:4,hl:4,info:4,spinner:4,border:7'"
-      "--height 40%" "--layout reverse" "--border sharp"
-    ];
-  };
-
-  programs.bat = {
-    enable = true;
-    config = {
-      pager = "less -FR";
-      theme = "OneHalfDark";
+  xdg = {
+    dataHome = "~/.local/share";
+    userDirs = {
+      enable = true;
+      createDirectories = true;
+      documents = "$HOME/docs/";
+      download = "$HOME/dl/";
+      videos = "$HOME/vids/";
+      music = "$HOME/music/";
+      pictures = "$HOME/pics/";
+      desktop = "$HOME/stuff/other/";
+      publicShare = "$HOME/stuff/other/";
+      templates = "$HOME/stuff/other/";
     };
   };
+
+  programs = {
+    foot = import ./foot/foot.nix lib;
+    bat = import ./bat/bat.nix;
+    fzf = import ./fzf/fzf.nix;
+    waybar = import ./waybar/waybar.nix lib;
+  };
+
+  wayland.windowManager.sway = import ./sway/sway.nix lib;
 
   gtk = {
     enable = true;

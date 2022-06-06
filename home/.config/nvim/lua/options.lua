@@ -13,6 +13,8 @@ opt.linebreak = true
 -- Disable preview window
 opt.completeopt = 'menu'
 
+opt.runtimepath = opt.runtimepath + "~/.fzf"
+
 -- Indentation
 opt.wrap = true
 opt.wrapmargin = 2
