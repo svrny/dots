@@ -5,23 +5,23 @@ lib: {
     main = {
       font = lib.mkDefault "Cascadia Code:size=7";
       dpi-aware = "yes";
-      pad = "2x2 center";
+      pad = "5x5 center";
     };
 
     colors = {
       background = "151515";
-      foreground = "a0a8b7";
+      foreground = "abb2bf";
 
-      regular0 = "202020";
-      regular1 = "e55561";
-      regular2 = "8ebd6b";
-      regular3 = "e2b86b";
-      regular4 = "4fa6ed";
-      regular5 = "bf68d9";
-      regular6 = "48b0bd";
-      regular7 = "a0a8b7";
+      regular0 = "282c34"; # Black
+      regular1 = "e06c75"; # Red
+      regular2 = "98c379"; # Green
+      regular3 = "e5c07b"; # Yellow
+      regular4 = "61afef"; # Blue
+      regular5 = "c678bd"; # Magenta
+      regular6 = "56b6c2"; # Cyan
+      regular7 = "abb2bf"; # White
 
-      bright0 = "353535";
+      bright0 = "1f2329";
       bright1 = "ff2748";
       bright2 = "1ef78d";
       bright3 = "facf31";

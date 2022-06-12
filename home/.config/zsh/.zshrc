@@ -46,8 +46,12 @@ alias tb="nc termbin.com 9999"
 alias tree="lsd --tree"
 alias nix='noglob nix'
 alias l='lsd -l'
-alias ll='lsd -la'
+alias ll='lsd -lA'
 alias la='ll'
+alias menc='doas cryptsetup open /dev/disk/by-label/enchdd enchdd \
+  && doas mount /dev/mapper/enchdd ~/run/enchdd'
+alias umenc=' doas umount /dev/mapper/enchdd \
+  && doas cryptsetup close enchdd'
 # }}}
 
 # Fzf {{{

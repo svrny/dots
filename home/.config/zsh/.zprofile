@@ -12,8 +12,9 @@ export FZF_DEFAULT_OPTS='
   --layout reverse
   --border sharp'
 
-export BEMENU_OPTS="-ibns --fn 'Cascadia Code 10' -p ' $ '
-  --tf '#61afef' --ff '#abb2bf' --nf '#abb2bf' --hf '#61afef' --sf '#abb2bf'"
+export BEMENU_BACKEND=curses
+# export BEMENU_OPTS="-ibns --fn 'Cascadia Code 10' -p ' $ '
+#   --tf '#61afef' --ff '#abb2bf' --nf '#abb2bf' --hf '#61afef' --sf '#abb2bf'"
 
 if [ "$(tty)" = "/dev/tty1" ]; then
   exec sway

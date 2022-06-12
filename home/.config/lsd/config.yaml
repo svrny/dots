@@ -19,9 +19,7 @@ dereference: false
 display: almost-all
 
 icons:
-  when: auto
-  theme: fancy
-  separator: " "
+  when: never
 
 indicators: false
 

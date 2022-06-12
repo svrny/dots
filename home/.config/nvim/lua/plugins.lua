@@ -1,3 +1,9 @@
+local fn = vim.fn
+local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+if fn.empty(fn.glob(install_path)) > 0 then
+  packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+end
+
 return require'packer'.startup({function(use)
   use 'wbthomason/packer.nvim'
 
@@ -91,8 +97,7 @@ return require'packer'.startup({function(use)
   use {
     'lukas-reineke/indent-blankline.nvim',
     config = function()
-      vim.cmd [[highlight IndentBlanklineIndent1 guifg=#303030 gui=nocombine]]
-      require'conf.indent-blankline'
+      require'conf.indent-blankline'.setup()
     end
   }
 
@@ -105,6 +110,10 @@ return require'packer'.startup({function(use)
   use 'sbdchd/neoformat'
   use 'b3nj5m1n/kommentary'
   use 'tpope/vim-surround'
+
+  if packer_bootstrap then
+    require('packer').sync()
+  end
 
 end,
 config = {

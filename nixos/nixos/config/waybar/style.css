@@ -1,0 +1,64 @@
+* {
+  border: none;
+  border-radius: 0;
+  font-family: "FontAwesome5Free, Cascadia Code";
+  font-size: 14px;
+}
+
+window#waybar {
+  background-color: #151515;
+  color: #abb2bf;
+  transition-property: background-color;
+  transition-duration: .5s;
+}
+
+.topbar {
+  border-bottom: 1px solid #282c34;
+}
+
+.bottombar {
+  border-top: 1px solid #282c34;
+}
+
+#workspaces button {
+  padding: 0 5px;
+  background-color: transparent;
+  color: #abb2bf;
+}
+
+#workspaces button:hover {
+  background: rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 3px #abb2bf;
+}
+
+#workspaces button.focused,
+#taskbar button.active {
+  background-color: #202020;
+  box-shadow: inset 0 3px #abb2bf;
+}
+
+#workspaces button.urgent {
+  background-color: #e55561;
+}
+
+#mode {
+  background-color: #202020;
+  border-top: 3px solid #abb2bf;
+}
+
+#clock, #cpu, #custom-uptime, #disk, #idle_inhibitor,
+#memory, #mode, #pulseaudio, #battery, #taskbar, #taskbar button,
+#temperature, #tray, #language {
+  padding: 0 10px;
+  margin: 0 0px;
+  color: #abb2bf;
+}
+
+#custom-separator { color: #353535; }
+
+#workspaces button {
+  margin: 0px 0px;
+  padding: 0px 10px;
+  min-width: 10px;
+  color: #abb2bf;
+}

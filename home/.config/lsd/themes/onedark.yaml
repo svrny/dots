@@ -1,8 +1,8 @@
 user: grey
 group: grey
 permission:
-  read: blue
-  write: cyan
+  read: cyan
+  write: blue
   exec: green
   exec-sticky: 5
   no-access: dark_grey
