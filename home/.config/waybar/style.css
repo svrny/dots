@@ -1,7 +1,7 @@
 * {
   border: none;
   border-radius: 0;
-  font-family: "FontAwesome5Free, Cascadia Code";
+  font-family: "Cascadia Code, Font Awesome 6 Free Solid";
   font-size: 14px;
 }
 
@@ -46,9 +46,9 @@ window#waybar {
   border-top: 3px solid #abb2bf;
 }
 
-#clock, #cpu, #custom-uptime, #disk, #idle_inhibitor,
+#custom-uptime, #custom-weather, #clock, #cpu, #idle_inhibitor,
 #memory, #mode, #pulseaudio, #battery, #taskbar, #taskbar button,
-#temperature, #tray, #language {
+#tray, #language {
   padding: 0 10px;
   margin: 0 0px;
   color: #abb2bf;

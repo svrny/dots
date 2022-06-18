@@ -10,7 +10,7 @@ blocks:
 
 color:
   when: auto
-  theme: onedark
+  theme: custom
 
 date: date
 

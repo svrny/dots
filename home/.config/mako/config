@@ -1,0 +1,21 @@
+border-size=1
+border-radius=0
+margin=10,10,10
+default-timeout=0
+font=monospace 10
+
+background-color=#151515
+progress-color=#3b3f4c
+
+[urgency=low]
+text-color=#98c379
+border-color=#98c379
+
+[urgency=normal]
+text-color=#61afef
+border-color=#61afef
+
+[urgency=high]
+default-timeout=0
+text-color=#e86671
+border-color=#e86671

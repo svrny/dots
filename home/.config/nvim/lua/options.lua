@@ -15,6 +15,9 @@ opt.completeopt = 'menu'
 
 opt.runtimepath = opt.runtimepath + "~/.fzf"
 
+-- penis
+--opt.cmdheight = 0
+
 -- Indentation
 opt.wrap = true
 opt.wrapmargin = 2

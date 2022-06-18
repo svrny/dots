@@ -97,7 +97,8 @@ return require'packer'.startup({function(use)
   use {
     'lukas-reineke/indent-blankline.nvim',
     config = function()
-      require'conf.indent-blankline'.setup()
+      require'conf.indent-blankline'
+      vim.cmd [[highlight IndentBlanklineIndent1 guifg=#303030 gui=nocombine]]
     end
   }
 

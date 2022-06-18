@@ -1,30 +1,19 @@
-indicator-x-position=200
 color=#000000
-font=Cascadia Code
+font=monospace
 font-size=14
 
-indicator-idle-visible
-indicator-radius=40
-indicator-thickness=10
-
-bs-hl-color=#3d3d3d
-
-inside-color=#151515
-inside-clear-color=#151515
 inside-ver-color=#151515
 inside-wrong-color=#151515
 
-line-uses-inside
-
-key-hl-color=#3d3d3d
 ring-color=#151515
 ring-clear-color=#151515
 ring-ver-color=#151515
-ring-wrong-color=#151515
+ring-wrong-color=#abb2bf
+key-hl-color=#abb2bf
+bs-hl-color=#abb2bf
 
-separator-color=#151515
-
-text-color=#ffffff
-text-clear-color=#ffffff
-text-var-color=#ffffff
-text-wrong-color=#ffffff
+text-color=#abb2bf
+text-clear-color=#abb2bf
+text-caps-lock-color=#abb2bf
+text-ver-color=#abb2bf
+text-wrong-color=#abb2bf

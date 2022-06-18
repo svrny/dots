@@ -6,22 +6,8 @@
 # only then values from $terminfo are valid
 if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
   function zle-line-init() { echoti smkx }
-  function zle-line-finish() { echoti rmkx }
   zle -N zle-line-init
-  zle -N zle-line-finish
 fi
-
-# Use emacs key bindings
-bindkey -e
-
-# # [PageUp] - Up a line of history
-# if [[ -n "${terminfo[kpp]}" ]]; then
-#   bindkey "${terminfo[kpp]}" up-line-or-history
-# fi
-# # [PageDown] - Down a line of history
-# if [[ -n "${terminfo[knp]}" ]]; then
-#   bindkey "${terminfo[knp]}" down-line-or-history
-# fi
 
 # Start typing + [Up-Arrow] - fuzzy find history forward
 if [[ -n "${terminfo[kcuu1]}" ]]; then
@@ -47,11 +33,6 @@ if [[ -n "${terminfo[kend]}" ]]; then
   bindkey "${terminfo[kend]}" end-of-line
 fi
 
-# # [Shift-Tab] - move through the completion menu backwards
-# if [[ -n "${terminfo[kcbt]}" ]]; then
-#   bindkey "${terminfo[kcbt]}" reverse-menu-complete
-# fi
-
 # [Backspace] - delete backward
 bindkey '^?' backward-delete-char
 # [Delete] - delete forward
@@ -59,7 +40,6 @@ if [[ -n "${terminfo[kdch1]}" ]]; then
   bindkey "${terminfo[kdch1]}" delete-char
 else
   bindkey "^[[3~" delete-char
-
   bindkey "^[3;5~" delete-char
 fi
 
