@@ -9,9 +9,9 @@
     videos = "$HOME/vids/";
     music = "$HOME/music/";
     pictures = "$HOME/pics/";
-    desktop = "$HOME/stuff/other/";
+    /* desktop = "$HOME/stuff/other/";
     publicShare = "$HOME/stuff/other/";
-    templates = "$HOME/stuff/other/";
+    templates = "$HOME/stuff/other/"; */
   };
 
   programs.git = {
@@ -19,7 +19,6 @@
     delta.enable = true;
     userName = "svrny";
     userEmail = "qlixior@gmail.com";
-    extraConfig.core.editor = "nvim";
   };
 
   gtk = let yaru = {

@@ -9,6 +9,8 @@ if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
   zle -N zle-line-init
 fi
 
+bindkey -e
+
 # Start typing + [Up-Arrow] - fuzzy find history forward
 if [[ -n "${terminfo[kcuu1]}" ]]; then
   autoload -U up-line-or-beginning-search
@@ -16,6 +18,7 @@ if [[ -n "${terminfo[kcuu1]}" ]]; then
 
   bindkey "${terminfo[kcuu1]}" up-line-or-beginning-search
 fi
+
 # Start typing + [Down-Arrow] - fuzzy find history backward
 if [[ -n "${terminfo[kcud1]}" ]]; then
   autoload -U down-line-or-beginning-search

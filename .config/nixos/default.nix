@@ -4,38 +4,32 @@
   nix.package = pkgs.nixUnstable;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.joypixels.acceptLicense = true;
-
   environment = {
     defaultPackages = lib.mkForce [ ];
-    shells = with pkgs; [ zsh bashInteractive ];
     systemPackages = (with pkgs; [
       # Gui apps
-      firefox-wayland gimp libreoffice-fresh
-      pavucontrol element-desktop vscode-fhs
-      tilix
+      firefox-wayland gimp libreoffice-fresh element-desktop
+      vscodium-fhs tilix
       # Cli utils
-      # duf inotify-tools wget du-dust musikcube
-      jq bat htop btop ripgrep zoxide cryptsetup
-      fd fzf curl sysz unzip ffmpeg android-tools
-      lf git lsd tmux delta neovim killall yt-dlp
-      libqalculate alsa-utils procps
-      # Dev
+      jq bat htop btop ripgrep zoxide fd fzf curl sysz unzip ffmpeg git
+      lf lsd tmux delta neovim killall yt-dlp libqalculate wl-clipboard
+      # Dev tools
       elixir nodejs gcc python310
+    ]);
+    gnome.excludePackages = (with pkgs; [
+      gnome-tour gnome-text-editor
     ]) ++ (with pkgs.gnome; [
-      # Gnome apps
-      nautilus totem evince eog file-roller gnome-autoar
-      gnome-disk-utility gnome-system-monitor
+      gnome-maps gnome-contacts yelp cheese gnome-music
+      gnome-terminal gedit epiphany geary
+      gnome-characters tali iagno hitori atomix
     ]);
   };
 
   virtualisation.podman.enable = true;
 
   fonts = {
-    fontconfig.enable = lib.mkForce true;
     fontconfig.defaultFonts = {
-      emoji = [ "JoyPixels" ];
+      emoji = [ "Noto" ];
       monospace = [ "Cascadia Code" ];
       sansSerif = [ "Ubuntu" ];
       serif = [ "Ubuntu" ];
@@ -44,7 +38,7 @@
       cascadia-code
       ubuntu_font_family
       noto-fonts-cjk
-      joypixels
+      noto-fonts-emoji
       (nerdfonts.override { fonts = [ "CascadiaCode" ]; })
     ];
   };
@@ -58,20 +52,13 @@
     desktopManager.gnome.enable = true;
   };
 
-
   users.users.qlixior = {
     description = "Qlixior";
     isNormalUser = true;
-    createHome = true;
-    home = "/home/qlixior";
     shell = pkgs.zsh;
-    extraGroups = [ "wheel" "video" "adbusers" ];
+    extraGroups = [ "wheel" ];
   };
 
   time.timeZone = "Europe/Moscow";
-  i18n.defaultLocale = "en_US.UTF-8";
-  console. keyMap = "us";
-  console.font = "Lat2-Terminus16";
-
   system.stateVersion = "22.11"; # cunny comment
 }

@@ -1,8 +1,0 @@
-set hidden
-set incsearch
-
-cmd trash $IFS="'printf '\n\t''"; mv $fx ~/.trash
-
-map dd trash
-
-$mkdir -p ~/.trash

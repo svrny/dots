@@ -13,6 +13,7 @@ opt.linebreak = true
 -- Disable preview window
 opt.completeopt = 'menu'
 
+-- Fzf
 opt.runtimepath = opt.runtimepath + "~/.fzf"
 
 -- penis
@@ -58,5 +59,5 @@ opt.termguicolors = true
 -- Minimal number of screen lines to keep above and below the cursor
 opt.scrolloff = 5
 
--- Disaple startup screen
+-- Disable startup screen
 opt.shortmess = { I = true }
